@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load django_vite %}
+{% block head %}
+  <title>Página Inicial</title>
+{% endblock %}
+
+{% block main %}
+  <main class="flex-grow">
+    <div class="container mx-auto p-6">
+      <div class="flex flex-col items-center justify-center w-full">
+        <p class="text-[48px] font-normal mt-6">Bem-Vindo!</p>
+        <p class="text-lg font-semibold mt-4">Tente encontrar os 7 Erros no Site!</p>
+      </div>
+    </div>
+  </main>
+{% endblock %}

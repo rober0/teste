@@ -1,0 +1,53 @@
+{% load django_vite %}
+{% load static %}
+<!DOCTYPE html>
+<html data-theme="forest" lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block head %}
+
+    {% endblock %}
+    {% vite_hmr_client %}
+
+    <link rel="stylesheet" href="{% vite_asset_url 'static/css/global.css' %}" />
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <section class="header">
+      <header>
+        <div class="navbar bg-base-100 shadow-sm">
+          <div class="navbar-start">
+            <a href="/" class="btn btn-ghost text-xl">Site</a>
+          </div>
+          <div class="navbar-center">
+            <ul class="menu menu-horizontal px-1">
+              <li>
+                <a>Item 1</a>
+              </li>
+              <li>
+                <a>Item 2</a>
+              </li>
+              <li>
+                <a>Item 3</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-end gap-x-2">
+            <a href="{% url 'accounts:login' %}" class="btn btn-primary">Entrar</a>
+            <a href="{% url 'accounts:register' %}" class="btn btn-primary">Registrar</a>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    {% block main %}
+
+    {% endblock %}
+
+    <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>Copyright © 2025 - Nome do Site</p>
+      </aside>
+    </footer>
+  </body>
+</html>
