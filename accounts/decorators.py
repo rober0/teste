@@ -12,6 +12,8 @@ def admin_required(function):
 
 def visitante_required(function):
     def wrap(request, *args, **kwargs):
-        raise PermissionDenied
+        if hasattr(request.user, "visitante"):
+            raise function(request, *args, **kwargs)
+        return PermissionDenied
 
     return wrap

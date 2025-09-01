@@ -12,6 +12,7 @@
   </head>
   <body>
     <form method="post">
+      {% csrf_token %}
       <div class="flex justify-center items-center h-screen">
         <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
           <legend class="fieldset-legend">Registre-se</legend>

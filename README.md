@@ -12,4 +12,12 @@ python -m venv .venv
 .venv\Scripts\activate
 npm install
 pip install -r requirements.txt
+py manage.py runserver
 ```
+
+## Split Terminal
+```
+npm run dev
+```
+
+Requisitos: NodeJs
